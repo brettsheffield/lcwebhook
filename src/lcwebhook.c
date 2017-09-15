@@ -22,11 +22,9 @@
 
 #define _GNU_SOURCE
 #include <librecast.h>
-#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
 #include "cJSON.h"
 
 #define BUFSIZE 5242880 /* github has a 5MB limit on webhook payloads */
