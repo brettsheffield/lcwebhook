@@ -3,7 +3,7 @@
  *
  * this file is part of LCWEBHOOK
  *
- * Copyright (c) 2017 Brett Sheffield <brett@gladserv.com>
+ * Copyright (c) 2017, 2019 Brett Sheffield <brett@gladserv.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -61,13 +61,13 @@ int main(int argc, char **argv)
 	lc_ctx_t *ctx;
 	lc_socket_t *sock;
 	lc_channel_t *chan;
+	lc_message_t msg;
 
 	ctx = lc_ctx_new();
 	sock = lc_socket_new(ctx);
 	chan = lc_channel_new(ctx, channelName);
 	lc_channel_bind(sock, chan);
 
-	lc_message_t msg;
 	lc_msg_init_size(&msg, strlen(msgtext) - 1);
 	memcpy(lc_msg_data(&msg), msgtext, strlen(msgtext) - 1);
 	lc_msg_send(chan, &msg);
